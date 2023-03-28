@@ -1,0 +1,47 @@
+{
+  "name": "design-system-docs",
+  "private": true,
+  "version": "0.0.0",
+  "scripts": {
+    "watch:dev": "start-storybook -p 6006",
+    "watch:tailwind": "npx tailwindcss -i ./src/index.css -o ./src/styles/tailwind.css --watch",
+    "build:tailwind": "npx tailwindcss -i ./src/index.css -o ./src/styles/tailwind.css ",
+    "dev": "concurrently 'pnpm:watch:*'",
+    "build": "pnpm build:tailwind && build-storybook",
+    "start": "vite"
+  },
+  "dependencies": {
+    "concurrently": "^7.6.0",
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0",
+    "ui": "workspace:*",
+    "webpack": "^5.76.3"
+  },
+  "devDependencies": {
+    "@babel/core": "^7.21.3",
+    "@storybook/addon-actions": "^6.5.16",
+    "@storybook/addon-docs": "^6.5.16",
+    "@storybook/addon-essentials": "^6.5.16",
+    "@storybook/addon-interactions": "^6.5.16",
+    "@storybook/addon-links": "^6.5.16",
+    "@storybook/addon-styling": "^0.3.2",
+    "@storybook/addons": "^6.5.16",
+    "@storybook/builder-vite": "^0.4.2",
+    "@storybook/cli": "^6.5.16",
+    "@storybook/react": "^6.5.16",
+    "@storybook/testing-library": "^0.0.13",
+    "@storybook/theming": "^6.5.16",
+    "@types/react": "^18.0.28",
+    "@types/react-dom": "^18.0.11",
+    "@vitejs/plugin-react": "^3.1.0",
+    "autoprefixer": "^10.4.14",
+    "babel-loader": "^8.3.0",
+    "postcss": "^8.4.21",
+    "postcss-loader": "^7.1.0",
+    "tailwind-config": "workspace:*",
+    "tailwindcss": "^3.2.7",
+    "tsconfig": "workspace:*",
+    "typescript": "^4.9.3",
+    "vite": "^4.2.0"
+  }
+}
