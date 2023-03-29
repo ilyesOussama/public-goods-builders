@@ -1,0 +1,37 @@
+---
+import { Icon } from "astro-icon";
+
+const pathname = new URL(Astro.request.url).pathname;
+const currentPath = pathname.slice(1);
+---
+
+<nav
+  class="flex items-center justify-between flex-row py-2 sm:py-4 lg:py-6 max-w-7xl mx-auto w-screen px-4 md:px-0"
+>
+  <a href="/" class="text-2xl">🌱</a>
+  <ul
+    class="flex flex-row gap-4 text-gray-300 border border-green-200 rounded-md py-2 px-4"
+  >
+    <li class={currentPath === "" ? "text-green-400" : ""}>
+      <a href="#">Home</a>
+    </li>
+    <li class={currentPath === "/projects" ? "text-green-400" : ""}>
+      <a href="#">Projects</a>
+    </li>
+    <li class={currentPath === "/team" ? "text-green-400" : ""}>
+      <a href="#">Team</a>
+    </li>
+  </ul>
+  <ul class="flex flex-row gap-2">
+    <li>
+      <a href="https://github.com" target="_blank">
+        <Icon pack="mdi" name="github" class="w-8 h-8" />
+      </a>
+    </li>
+    <li>
+      <a href="https://twitter.com" target="_blank">
+        <Icon pack="mdi" name="twitter" class="w-8 h-8" />
+      </a>
+    </li>
+  </ul>
+</nav>
