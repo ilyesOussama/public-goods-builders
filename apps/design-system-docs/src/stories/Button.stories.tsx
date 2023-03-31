@@ -1,48 +1,41 @@
-import { Meta, Story } from "@storybook/react";
-import { Button, ButtonProps } from "ui";
+import React from 'react';
+import { ComponentStory, ComponentMeta } from '@storybook/react';
 
+import { Button } from './Button';
+
+// More on default export: https://storybook.js.org/docs/react/writing-stories/introduction#default-export
 export default {
-  title: "Components/Button",
+  title: 'Example/Button',
   component: Button,
+  // More on argTypes: https://storybook.js.org/docs/react/api/argtypes
   argTypes: {
-    onClick: { action: "clicked" },
+    backgroundColor: { control: 'color' },
   },
-} as Meta;
+} as ComponentMeta<typeof Button>;
 
-const Template: Story<ButtonProps> = (args) => (
-  <Button {...args}>Button</Button>
-);
+// More on component templates: https://storybook.js.org/docs/react/writing-stories/introduction#using-args
+const Template: ComponentStory<typeof Button> = (args) => <Button {...args} />;
 
-export const Sizes = () => (
-  <>
-    <h2>X-Small</h2>
-    <Template size="xs" />
-    <h2>Small</h2>
-    <Template size="sm" />
-    <h2>Medium</h2>
-    <Template size="md" />
-    <h2>Large</h2>
-    <Template size="lg" />
-    <h2>X-Large</h2>
-    <Template size="xl" />
-  </>
-);
+export const Primary = Template.bind({});
+// More on args: https://storybook.js.org/docs/react/writing-stories/args
+Primary.args = {
+  primary: true,
+  label: 'Button',
+};
 
-export const Variants = () => (
-  <>
-    <h2>Primary</h2>
-    <Template variant="primary" />
-    <h2>Secondary</h2>
-    <Template variant="secondary" />
-    <h2>Success</h2>
-    <Template variant="success" />
-    <h2>Warning</h2>
-    <Template variant="warning" />
-    <h2>Error</h2>
-    <Template variant="error" />
-    <h2>Outline</h2>
-    <Template variant="outline" />
-    <h2>Ghost</h2>
-    <Template variant="ghost" />
-  </>
-);
+export const Secondary = Template.bind({});
+Secondary.args = {
+  label: 'Button',
+};
+
+export const Large = Template.bind({});
+Large.args = {
+  size: 'large',
+  label: 'Button',
+};
+
+export const Small = Template.bind({});
+Small.args = {
+  size: 'small',
+  label: 'Button',
+};

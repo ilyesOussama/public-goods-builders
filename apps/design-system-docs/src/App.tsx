@@ -1,66 +1,35 @@
-import { Button } from "ui";
+import { useState } from 'react'
+import reactLogo from './assets/react.svg'
+import viteLogo from '/vite.svg'
+import './App.css'
 
 function App() {
-  return (
-    <div>
-      <div>
-        <Button size="small" variant="primary">
-          click
-        </Button>
-        <Button size="medium" variant="primary">
-          click
-        </Button>
-        <Button size="large" variant="primary">
-          click
-        </Button>
-      </div>
-      <div>
-        <Button size="small" variant="secondary">
-          click
-        </Button>
-        <Button size="medium" variant="secondary">
-          click
-        </Button>
-        <Button size="large" variant="secondary">
-          click
-        </Button>
-      </div>
+  const [count, setCount] = useState(0)
 
+  return (
+    <div className="App">
       <div>
-        <Button size="small" variant="success">
-          click
-        </Button>
-        <Button size="medium" variant="success">
-          click
-        </Button>
-        <Button size="large" variant="success">
-          click
-        </Button>
+        <a href="https://vitejs.dev" target="_blank">
+          <img src={viteLogo} className="logo" alt="Vite logo" />
+        </a>
+        <a href="https://reactjs.org" target="_blank">
+          <img src={reactLogo} className="logo react" alt="React logo" />
+        </a>
       </div>
-      <div>
-        <Button size="small" variant="warning">
-          click
-        </Button>
-        <Button size="medium" variant="warning">
-          click
-        </Button>
-        <Button size="large" variant="warning">
-          click
-        </Button>
+      <h1>Vite + React</h1>
+      <div className="card">
+        <button onClick={() => setCount((count) => count + 1)}>
+          count is {count}
+        </button>
+        <p>
+          Edit <code>src/App.tsx</code> and save to test HMR
+        </p>
       </div>
-      <div>
-        <Button size="small" variant="error">
-          click
-        </Button>
-        <Button size="medium" variant="error">
-          click
-        </Button>
-        <Button size="large" variant="error">
-          click
-        </Button>
-      </div>
+      <p className="read-the-docs">
+        Click on the Vite and React logos to learn more
+      </p>
     </div>
-  );
+  )
 }
 
-export default App;
+export default App
