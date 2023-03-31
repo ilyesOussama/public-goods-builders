@@ -2,14 +2,11 @@
 import Layout from "../layouts/Layout.astro";
 import Card from "../components/Card.astro";
 import Navbar from "../components/Navbar.astro";
-import { Icon } from "astro-icon";
 import Hero from "../components/Hero.astro";
 import Team from "../components/Team.astro";
-/* import { Tech } from "../components/Teach"; */
-import Tech from "../components/Tech.astro";
-import Test from "../components/Test.astro";
 import Footer from "../components/Footer.astro";
 import { Projects } from "../components/Projects";
+import { Tech } from "../components/Tech";
 ---
 
 <Layout title="Public Goods Builders">
@@ -17,9 +14,9 @@ import { Projects } from "../components/Projects";
     class="flex flex-col bg-black text-white w-screen h-screen overflow-x-hidden"
   >
     <Navbar />
-    <Hero /><!-- 
-    <Tech client:load /> -->
-    <Tech />
+    <Hero />
+    <Tech client:load />
+
     <Team />
     <Projects client:load />
     <Footer />
