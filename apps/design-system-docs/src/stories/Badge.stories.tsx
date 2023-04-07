@@ -12,33 +12,10 @@ const Template: Story<BadgeProps> = (args) => <Badge {...args} />;
 export const Sizes = () => (
   <>
     <Badge size="sm" variant="primary">
-      Small Primary
-    </Badge>
-    <Badge size="md" variant="primary">
-      Medium Primary
+      Small
     </Badge>
     <Badge size="lg" variant="primary">
-      Large Primary
-    </Badge>
-    <br />
-    <Badge size="sm" variant="secondary">
-      Small Secondary
-    </Badge>
-    <Badge size="md" variant="secondary">
-      Medium Secondary
-    </Badge>
-    <Badge size="lg" variant="secondary">
-      Large Secondary
-    </Badge>
-    <br />
-    <Badge size="sm" variant="ghost">
-      Small Ghost
-    </Badge>
-    <Badge size="md" variant="ghost">
-      Medium Ghost
-    </Badge>
-    <Badge size="lg" variant="ghost">
-      Large Ghost
+      Large
     </Badge>
   </>
 );
@@ -49,15 +26,10 @@ Sizes.parameters = {
 
 export const Variants = () => (
   <>
-    <Badge size="md" variant="primary">
-      Primary
-    </Badge>
-    <Badge size="md" variant="secondary">
-      Secondary
-    </Badge>
-    <Badge size="md" variant="ghost">
-      Ghost
-    </Badge>
+    <Badge variant="primary">Primary</Badge>
+    <Badge variant="success">Success</Badge>
+    <Badge variant="warning">Warning</Badge>
+    <Badge variant="error">Error</Badge>
   </>
 );
 

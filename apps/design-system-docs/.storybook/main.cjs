@@ -1,9 +1,13 @@
+const createCompiler = require("@storybook/addon-docs/mdx-compiler-plugin");
+
 module.exports = {
   stories: ["../src/**/*.stories.mdx", "../src/**/*.stories.@(js|jsx|ts|tsx)"],
   addons: [
     "@storybook/addon-links",
     "@storybook/addon-essentials",
     "@storybook/addon-interactions",
+    "@storybook/addon-a11y" /* 
+    "@storybook/addon-docs", */,
     {
       name: "@storybook/addon-postcss",
       options: {
@@ -11,7 +15,7 @@ module.exports = {
           implementation: require("postcss"),
         },
       },
-    },
+    } /* 
     {
       name: "@storybook/addon-docs",
       options: {
@@ -20,7 +24,7 @@ module.exports = {
         sourceLoaderOptions: null,
         transcludeMarkdown: true,
       },
-    },
+    }, */,
     {
       name: "@storybook/addon-styling",
       options: {

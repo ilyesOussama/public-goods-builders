@@ -1,13 +1,19 @@
 import Image from "next/image";
-import { Inter } from "next/font/google";
 import { Button } from "ui";
-import Container from "../components/Container";
-const inter = Inter({ subsets: ["latin"] });
+import { Projects } from "../components/Projects";
+import { Team } from "../components/Team";
+import { Footer } from "../components/Footer";
+import { Tech } from "../components/Tech";
+import { Hero } from "../components/Hero";
+import { Navbar } from "../components/Navbar";
 
 export default function Home() {
   return (
-    <Container>
-      <div>1</div>
-    </Container>
+    <>
+      <Hero />
+      <Tech />
+      <Team />
+      <Projects />     
+    </>
   );
 }

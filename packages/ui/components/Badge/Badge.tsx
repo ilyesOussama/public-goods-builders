@@ -2,26 +2,30 @@ import React from "react";
 import clsx from "clsx";
 
 export type BadgeProps = {
-  size: "sm" | "md" | "lg";
-  variant: "primary" | "secondary" | "ghost";
+  size?: "sm" | "lg";
+  variant?: "primary" | "success" | "warning" | "error";
   children: React.ReactNode;
 };
 
-export const Badge: React.FC<BadgeProps> = ({ size, variant, children }) => {
+export const Badge: React.FC<BadgeProps> = ({
+  size = "sm",
+  variant = "primary",
+  children,
+}) => {
   const sizeClasses = {
-    sm: "text-xs px-1.5 py-0.5",
-    md: "text-sm px-2 py-1",
-    lg: "text-lg px-3 py-1.5",
+    sm: "px-2.5 py-0.5",
+    lg: "text-md px-2.5 py-1",
   };
 
   const variantClasses = {
-    primary: "bg-green-500 text-white",
-    secondary: "bg-gray-300 text-gray-800",
-    ghost: "border border-gray-300 text-gray-800",
+    primary: "bg-green-100 text-green-800",
+    success: "bg-green-100 text-green-800",
+    warning: "bg-orange-100 text-orange-800",
+    error: "bg-red-100 text-red-800",
   };
 
   const badgeClass = clsx(
-    "inline-flex items-center font-medium rounded-full",
+    "inline-flex items-center rounded-full text-xs font-medium",
     sizeClasses[size],
     variantClasses[variant]
   );
